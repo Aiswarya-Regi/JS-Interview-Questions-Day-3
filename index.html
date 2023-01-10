@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Questions Day 2</title>
+</head>
+<body>
+    <h1 style="text-align:center;color:red;text-decoration:underline">JS Interview Questions Day 2</h1>
+    <h3 style="color:blue">Q:1) What are closures? Give an example of closure</h3>
+    <p style="color:green;">A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).</p>
+    <p  style="color:green;">In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.</p>
+    <pre style="color:green;">
+        function outerFunc() {
+            var outerVar = 100;
+            function innerFunc() {
+            console.log(outerVar);
+            }
+            return innerFunc;
+            }
+            var value=outerFunc();
+            value();
+            Output: 100
+    </pre>
+    <h3 style="color:blue">Q:2) What are objects in javascript?</h3>
+    <p style="color:green;">An object is a collection of related data and/or functionality. These usually consist of several variables and functions (which are called properties and methods when they are inside objects).</p>
+    <p style="color:green;">To create an object with properties, you use the key:value within the curly braces. For example,
+        the following creates a new person object:</p>
+        <pre style="color:green;">
+            let person = {
+                firstName: 'John',
+                lastName: 'Doe'
+                };
+                
+        </pre>
+    <h3 style="color:blue">Q:3) What are function constructors?</h3>
+    <p style="color:green;">A constructor is a special function that creates and initializes an object instance of a class. In
+        JavaScript, a constructor gets called when an object is created using the new keyword. We have
+        multiple constructor functions like Function constructor for functions, Object constructor
+        function for objects, Array constructor function for arrays.</p>
+        <pre style="color:green;">
+            function User (name, age) {
+                this.name = name;
+                this.age = age;
+                }
+                var user1 = new User('Bob', 25);
+                var user2 = new User('Alice', 27);
+        </pre>
+    <h3 style="color:blue">Q:4) Explain prototypes</h3>
+    <p style="color:green;">Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+        Every object in JavaScript has a built-in property, which is called its prototype.
+        </p>
+        <pre style="color:green;">
+            function Person(first, last, age, eyecolor) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eyecolor;
+              }
+              
+              const myFather = new Person("John", "Doe", 50, "blue");
+              const myMother = new Person("Sally", "Rally", 48, "green");
+              console.log(myFather);
+        </pre>
+    <h3 style="color:blue">Q:5) What is prototype chain</h3>
+    <p style="color:green;">Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.</p>
+    <h3 style="color:blue">Q:6) Give an example of inheritance using function constructor</h3>
+    <pre style="color:green;">
+        function Employee(name, age, gender, id) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.id = id;
+            };
+            function Developer(name, age, gender, id, specialization) {
+            // Calling Employee constructor function
+            Employee.call(this, name, age, gender, id);
+            // Adding a new parameter
+            this.specialization = specialization;
+            }
+            // Creating objects
+            let Employee1 = new Employee("Suraj", 28, "Male", 564);
+            let Developer1 = new Developer("Karishma", 31, "Female", 345,
+            "Frontend Developer");
+            console.log(Employee1);
+            console.log(Developer1);
+    </pre>
+    <h3 style="color:blue">Q:7) How many operators do we have in JS ?</h3>
+    <p style="color:green;">Different types of operators are :-</p>
+    <ol style="color:green;">
+        <li>Arithmetic Operators(+,-,*,/,%,++,--)</li>
+        <li>Assignment Operators(=,+=,-=,*=,/=,%=)</li>
+        <li>Comparison Operators(=,===,!=,>,>=, <, <=)</li>
+        <li>Logical Operators(|| , &&, !)</li>
+        <li>Conditional Operators(?:)</li>
+        
+    </ol>
+    
+    <script src="index.js"></script>
+</body>
+</html>
